@@ -21,7 +21,7 @@ function App() {
 
   return (
     <div className="app">
-      <SushiContainer API={API} onPurchase={handlePurchase} />
+      <SushiContainer API={API} onPurchase={handlePurchase} balance={balance} />
       <Table plates={emptyPlates} balance={balance} />
     </div>
   );

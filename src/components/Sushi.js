@@ -1,10 +1,12 @@
 import React from "react";
 
-function Sushi({ sushi, onPurchase }) {
+function Sushi({ sushi, onPurchase, balance }) {
   const { name, img_url, price } = sushi;
 
   const handleClick = () => {
-    onPurchase(price);
+    price <= balance
+      ? onPurchase(price)
+      : console.log("Not enough money left!");
   };
   return (
     <div className="sushi">
