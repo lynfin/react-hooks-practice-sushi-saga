@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import MoreButton from "./MoreButton";
 import Sushi from "./Sushi";
 
-function SushiContainer({ API }) {
+function SushiContainer({ API, onPurchase }) {
   const [sushis, setSushis] = useState([]);
   const [sushiStart, setSushiStart] = useState(0);
   const [beltSushi, setBeltSushi] = useState([]);
@@ -27,7 +27,7 @@ function SushiContainer({ API }) {
   return (
     <div className="belt">
       {beltSushi.map((sushi) => (
-        <Sushi sushi={sushi} key={sushi.id} />
+        <Sushi sushi={sushi} key={sushi.id} onPurchase={onPurchase} />
       ))}
       <MoreButton onMoreSushi={handleMoreSushi} />
     </div>
