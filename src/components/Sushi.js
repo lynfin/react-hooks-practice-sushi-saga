@@ -1,7 +1,7 @@
 import React from "react";
 
 function Sushi({ sushi }) {
-  const { id, name, img_url, price } = sushi;
+  const { name, img_url, price } = sushi;
   return (
     <div className="sushi">
       <div className="plate" onClick={/* Give me a callback! */ null}>

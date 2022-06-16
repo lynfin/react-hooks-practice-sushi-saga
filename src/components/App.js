@@ -7,13 +7,13 @@ const API = "http://localhost:3001/sushis";
 function App() {
   // ┌ └ ─ ├ │
   // App [balance]
-  //  ├ SushiContainer [sushi]
+  //  ├ SushiContainer [sushis, sushiStart, beltSushi]
   //  │   ├ Sushi
   //  │   └ MoreButton
   //  └ Table
   return (
     <div className="app">
-      <SushiContainer />
+      <SushiContainer API={API} />
       <Table />
     </div>
   );
