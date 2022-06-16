@@ -26,6 +26,15 @@ function SushiContainer({ API, onPurchase, balance }) {
       setSushiStart((prevStart) => prevStart + 4);
     }
   };
+
+  const handleUpdatedSushi = (updatedSushi) => {
+    setSushis(
+      sushis.map((sushi) =>
+        sushi.id === updatedSushi.id ? updatedSushi : sushi
+      )
+    );
+  };
+
   console.log(beltSushi);
   return (
     <div className="belt">
@@ -35,6 +44,7 @@ function SushiContainer({ API, onPurchase, balance }) {
           key={sushi.id}
           onPurchase={onPurchase}
           balance={balance}
+          onUpdate={handleUpdatedSushi}
         />
       ))}
       <MoreButton onMoreSushi={handleMoreSushi} />
