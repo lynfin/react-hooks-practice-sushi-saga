@@ -10,7 +10,9 @@ function SushiContainer({ API, onPurchase, balance }) {
   useEffect(() => {
     fetch(API)
       .then((r) => r.json())
-      .then((sushis) => setSushis(sushis));
+      .then((sushis) =>
+        setSushis(sushis.map((sushi) => ({ ...sushi, isEaten: false })))
+      );
   }, [API]);
 
   useEffect(() => {
@@ -24,6 +26,7 @@ function SushiContainer({ API, onPurchase, balance }) {
       setSushiStart((prevStart) => prevStart + 4);
     }
   };
+  console.log(beltSushi);
   return (
     <div className="belt">
       {beltSushi.map((sushi) => (
